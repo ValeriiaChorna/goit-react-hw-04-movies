@@ -43,8 +43,12 @@ class MoviesPage extends Component {
       return history.push(state.from);
     }
     history.push(routes.MOVIES);
+  };
+
+  render() {
     const { match } = this.props;
     const { error, loading } = this.state;
+
     // console.log(this.state.movieDetail);
     return (
       <>
@@ -104,7 +108,7 @@ class MoviesPage extends Component {
         </Switch>
       </>
     );
-  };
+  }
 }
 
 export default MoviesPage;

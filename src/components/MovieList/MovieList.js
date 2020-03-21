@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import routs from '../../routes';
+import routes from '../../routes';
 import T from 'prop-types';
 
 const MovieList = ({ movies, location }) => {
@@ -10,7 +10,7 @@ const MovieList = ({ movies, location }) => {
         <li key={id}>
           <NavLink
             to={{
-              pathname: `${routs.MOVIE_DETAILS_PAGE}/${id}`,
+              pathname: `${routes.MOVIES}/${id}`,
               state: { from: location },
             }}
             className="link"
