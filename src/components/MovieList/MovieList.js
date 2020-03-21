@@ -10,7 +10,7 @@ const MovieList = ({ movies, location }) => {
         <li key={id}>
           <NavLink
             to={{
-              pathname: `${routs.movies}/${id}`,
+              pathname: `${routs.MOVIE_DETAILS_PAGE}/${id}`,
               state: { from: location },
             }}
             className="link"

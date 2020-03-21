@@ -42,10 +42,7 @@ class MoviesPage extends Component {
       // console.log(state.from);
       return history.push(state.from);
     }
-    history.push(routes.movies);
-  };
-
-  render() {
+    history.push(routes.MOVIES);
     const { match } = this.props;
     const { error, loading } = this.state;
     // console.log(this.state.movieDetail);
@@ -102,12 +99,12 @@ class MoviesPage extends Component {
         <hr />
 
         <Switch>
-          <Route path={routes.cast} component={Cast} />
-          <Route path={routes.reviews} component={Reviews} />
+          <Route path={routes.CAST} component={Cast} />
+          <Route path={routes.REVIEWS} component={Reviews} />
         </Switch>
       </>
     );
-  }
+  };
 }
 
 export default MoviesPage;
