@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MovieDetails from '../../components/MovieDetails';
-import { NavLink, Switch, Route } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 import Cast from '../Cast';
 import Reviews from '../Reviews';
 import Notification from '../../components/Notification';
@@ -37,19 +37,15 @@ class MoviesPage extends Component {
       history,
       location: { state },
     } = this.props;
-    // history.goBack();
     if (state && state.from) {
-      // console.log(state.from);
       return history.push(state.from);
     }
-    history.push(routes.MOVIES);
+    history.push(routes.HOMEPAGE);
   };
 
   render() {
     const { match } = this.props;
     const { error, loading } = this.state;
-
-    // console.log(this.state.movieDetail);
     return (
       <>
         <button onClick={this.onBackButton} type="button">
@@ -66,7 +62,7 @@ class MoviesPage extends Component {
 
         {this.state.movieDetail && (
           <MovieDetails
-            url={`http://image.tmdb.org/t/p/w500${this.state.movieDetail.backdrop_path}`}
+            url={`${movieApi.IMG_URL}${this.state.movieDetail.backdrop_path}`}
             title={this.state.movieDetail.title}
             popularity={this.state.movieDetail.popularity}
             overview={this.state.movieDetail.overview}
@@ -79,24 +75,24 @@ class MoviesPage extends Component {
         <p>Addition Information</p>
         <ul>
           <li>
-            <NavLink
+            <Link
               to={{
                 pathname: `${match.url}/cast`,
-                state: { from: this.props.location },
+                state: { from: this.props.location.state.from },
               }}
             >
               Cast
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink
+            <Link
               to={{
                 pathname: `${match.url}/reviews`,
-                state: { from: this.props.location },
+                state: { from: this.props.location.state.from },
               }}
             >
               Reviews
-            </NavLink>
+            </Link>
           </li>
         </ul>
 

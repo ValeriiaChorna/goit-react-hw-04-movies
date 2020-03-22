@@ -5,12 +5,20 @@ import routes from '../../routes';
 const Navigation = () => (
   <ul>
     <li>
-      <NavLink to={routes.HOMEPAGE} activeClassName="active-link">
+      <NavLink
+        to={routes.HOMEPAGE}
+        className="link"
+        activeClassName="active-link"
+      >
         Home
       </NavLink>
     </li>
     <li>
-      <NavLink to={routes.MOVIES} activeClassName="active-link">
+      <NavLink
+        to={routes.MOVIES}
+        className="link"
+        activeClassName="active-link"
+      >
         Movies
       </NavLink>
     </li>

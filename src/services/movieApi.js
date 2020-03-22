@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const myAPIkey = '4bab37c99947cd268443c52a9188d286';
+const IMG_URL = 'http://image.tmdb.org/t/p/w500';
 
 const fetchDayTrending = () => {
   return axios
@@ -40,6 +41,7 @@ const fetchMovieByName = movieName => {
 
 export default {
   BASE_URL,
+  IMG_URL,
   fetchDayTrending,
   fetchMovieById,
   fetchMovieCastById,

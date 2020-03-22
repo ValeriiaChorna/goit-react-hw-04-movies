@@ -42,7 +42,8 @@ class Homepage extends Component {
         {movies.length > 0 && (
           <>
             <h2>Trending today</h2>
-            <MovieList movies={movies} location={this.props.location} />
+            <MovieList movies={movies} />
+            {/* <MovieList movies={movies} location={this.props.location} /> */}
           </>
         )}
       </>

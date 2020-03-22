@@ -48,7 +48,7 @@ class Cast extends Component {
                   <li key={id}>
                     <img
                       width="200"
-                      src={`http://image.tmdb.org/t/p/w500${profile_path}`}
+                      src={`${movieApi.IMG_URL}${profile_path}`}
                       alt={name}
                     />
                     <p>{name}</p>
